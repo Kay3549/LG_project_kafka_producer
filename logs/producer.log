@@ -1,0 +1,19 @@
+INFO  24-05-23 13:35:33[main] [AnnotationConfigContextLoaderUtils:83] - Could not detect default configuration classes for test class [producer.MainrunningappTests]: MainrunningappTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+INFO  24-05-23 13:35:33[main] [SpringBootTestContextBootstrapper:234] - Found @SpringBootConfiguration producer.Mainrunningapp for test class producer.MainrunningappTests
+WARN  24-05-23 13:35:34[main] [DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer:78] - 
+
+Found multiple occurrences of org.json.JSONObject on the class path:
+
+	jar:file:/C:/Users/%ec%9d%b8%ed%8f%ac%ec%a0%84%ec%8a%a4/.m2/repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar!/org/json/JSONObject.class
+	jar:file:/C:/Users/%ec%9d%b8%ed%8f%ac%ec%a0%84%ec%8a%a4/.m2/repository/org/json/json/20231013/json-20231013.jar!/org/json/JSONObject.class
+
+You may wish to exclude one of them to ensure predictable runtime behavior
+
+INFO  24-05-23 13:35:34[main] [MainrunningappTests:50] - Starting MainrunningappTests using Java 21.0.1 with PID 25532 (started by 인포전스 in D:\LG_Project\kafkaProducer)
+INFO  24-05-23 13:35:34[main] [MainrunningappTests:660] - The following 1 profile is active: "producer"
+INFO  24-05-23 13:35:37[main] [KafkaProducerApp:61] - IP Address : 172.23.15.103:9092
+INFO  24-05-23 13:35:37[main] [KafkaProducerApp:62] - authentication info : org.apache.kafka.common.security.scram.ScramLoginModule required username="clcc_cc_svc" password="GPesEI6k78DEku58";
+INFO  24-05-23 13:35:37[main] [KafkaProducerApp:63] - protocal : SASL_PLAINTEXT
+INFO  24-05-23 13:35:37[main] [KafkaProducerApp:64] - mechanism : SCRAM-SHA-256
+INFO  24-05-23 13:35:37[main] [KafkaProducerApp:82] - 프롭 : {security.protocol=SASL_PLAINTEXT, value.serializer=org.apache.kafka.common.serialization.StringSerializer, sasl.mechanism=SCRAM-SHA-256, sasl.jaas.config=org.apache.kafka.common.security.scram.ScramLoginModule required username="clcc_cc_svc" password="GPesEI6k78DEku58";, bootstrap.servers=172.23.15.103:9092, key.serializer=org.apache.kafka.common.serialization.StringSerializer}
+INFO  24-05-23 13:35:40[main] [MainrunningappTests:56] - Started MainrunningappTests in 6.502 seconds (process running for 10.687)
