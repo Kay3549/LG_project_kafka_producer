@@ -19,17 +19,17 @@ import reactor.core.publisher.Mono;
 
 @Controller
 @Slf4j
-public class TopicsController {
+public class TopicsController {         
 
 	@Autowired
-	private KafkaProducerApp Producer;
+	private KafkaProducerApp Producer;       
 
 	@PostMapping("/gcapi/post/{topic}")
 	public Mono<ResponseEntity<String>> GetApiData(@PathVariable("topic") String tranId, @RequestBody(required=false) String msg) {
 
 		String topic_name = tranId;
 		log.info("토픽이름 : {}", topic_name);
-		log.info("프로듀서가 받음. 메시지 : {}", msg);
+		log.info("프로듀서가 받음. 메시지 : {}", msg);      
 
 		try {
 			
