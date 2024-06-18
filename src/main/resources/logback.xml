@@ -139,6 +139,7 @@
 	</logger>
 	
 
+	<logger name="org.apache.kafka" level="OFF" />
 	 <!-- Loggers -->
     <logger name="org.apache.catalina" level="INFO" additivity="false">
         <appender-ref ref="CATALINA"/>

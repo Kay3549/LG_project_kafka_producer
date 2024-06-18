@@ -2,11 +2,9 @@ package producer;
 
 import java.time.Duration;
 import java.time.Instant;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.concurrent.CompletableFuture;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,105 +17,94 @@ import reactor.core.publisher.Mono;
 
 @Controller
 @Slf4j
-public class TopicsController {         
+public class TopicsController {
 
 	@Autowired
-	private KafkaProducerApp Producer;       
+	private KafkaProducerApp Producer;
 
 	@PostMapping("/gcapi/post/{topic}")
-	public Mono<ResponseEntity<String>> GetApiData(@PathVariable("topic") String tranId, @RequestBody(required=false) String msg) {
+	public Mono<ResponseEntity<String>> GetApiData(@PathVariable("topic") String topic,
+			@RequestBody(required = false) String msg) {
 
-		String topic_name = tranId;
-		log.info("토픽이름 : {}", topic_name);
-		log.info("프로듀서가 받음. 메시지 : {}", msg);      
+		log.info("토픽으로 보낼 메시지를 받음. 토픽명 : {}", topic);
+		log.info("토픽 / 메시지 내용 : {} // {}", topic, msg);
 
 		try {
-			
-			List<CompletableFuture<Void>> futures = new ArrayList<>();
-			CompletableFuture<Void> future = Producer.sendMessageAsync(topic_name, "", msg);
-			futures.add(future);
-			CompletableFuture.allOf(futures.toArray(new CompletableFuture[0])).join();
-			
-			if(topic_name.equals("from_clcc_mblaiccmpnrs_message")) {
-				return Mono.just(ResponseEntity.ok().body(String.format("Producer has got an RT message for '%s' : %s",topic_name, msg)));
-			}else if(topic_name.equals("from_clcc_hmaiccmpnrs_message")) {
-				return Mono.just(ResponseEntity.ok().body(String.format("Producer has got an RT message for '%s' : %s",topic_name, msg)));
-			}else if(topic_name.equals("from_clcc_mblucrmcmpnrs_message")) {
-				return Mono.just(ResponseEntity.ok().body(String.format("Producer has got an RT message for '%s' : %s",topic_name, msg)));
-			}else if(topic_name.equals("from_clcc_hmucrmcmpnrs_message")) {
-				return Mono.just(ResponseEntity.ok().body(String.format("Producer has got an RT message for '%s' : %s",topic_name, msg)));
-			}else if(topic_name.equals("from_clcc_hmucrmcmpnma_message")) {
-				return Mono.just(ResponseEntity.ok().body(String.format("Producer has got an MA message for '%s' : %s",topic_name, msg)));
-			}else if(topic_name.equals("from_clcc_mblucrmcmpnma_message")) {
-				return Mono.just(ResponseEntity.ok().body(String.format("Producer has got an MA message for '%s' : %s",topic_name, msg)));
-			}else if(topic_name.equals("from_clcc_hmaiccmpnma_message")) {
-				return Mono.just(ResponseEntity.ok().body(String.format("Producer has got an MA message for '%s' : %s",topic_name, msg)));
-			}else if(topic_name.equals("from_clcc_mblaiccmpnma_message")) {
-				return Mono.just(ResponseEntity.ok().body(String.format("Producer has got an MA message for '%s' : %s",topic_name, msg)));
-			}
-			
-			
+			return Producer.sendMessage(topic, "", msg).flatMap(metadata -> {
+				String messageType = topic.startsWith("from_clcc_") ? (topic.contains("rs") ? "RT" : "MA") : "";
+				String responseMessage = String.format(
+						"'%s' 토픽으로 %s message를 보냄. 메시지 내용 : %s",
+						messageType.isEmpty() ? "regular" : topic, messageType, msg);
+				return Mono.just(ResponseEntity.ok().body(responseMessage));
+			}).doOnError(e -> {
+				log.error("카프카 서버로 메시지를 보내는 도중 에러가 발생하였습니다. : {}", e.getMessage());
+            }).onErrorResume(e -> {
+            	 String errorMessage = String.format("카프카 서버와 통신 중 에러가 발생하였습니다. : %s", e.getMessage());
+                 return Mono.just(ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(errorMessage));
+			});
 		} catch (Exception e) {
-			log.info("Error, Producer side : {}", e.getMessage()  );
-			e.printStackTrace();
+			log.error("프로듀서쪽의 에러 : {}", e.getMessage());
+			return Mono.just(ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+					.body("비동기 진행과정 중에서 에러가 발생했습니다."));
 		}
-		
-		return Mono.just(ResponseEntity.ok("GetApiData Method has been called by G.C Application well"));
 	}
+	
 
 	@PostMapping("/360view/{topic}")
-	public Mono<ResponseEntity<String>> Get360viewData(@PathVariable("topic") String tranId, @RequestBody(required=false) String msg) {
+	public Mono<ResponseEntity<String>> Get360viewData(@PathVariable("topic") String tranId,
+			@RequestBody(required = false) String msg) {
 
 		String topic_name = tranId;
 		log.info("토픽이름 : {}", topic_name);
 		log.info("프로듀서가 받음. 메시지 : {}", msg);
 		
 		try {
-			
-			List<CompletableFuture<Void>> futures = new ArrayList<>();
-			CompletableFuture<Void> future = Producer.sendMessageAsync(topic_name, "", msg);
-			futures.add(future);
-			CompletableFuture.allOf(futures.toArray(new CompletableFuture[0])).join();
-			
-			return Mono.just(ResponseEntity.ok().body(String.format("Producer has got an message for '%s' : %s",topic_name, msg)));
-			
+			return Producer.sendMessage(topic_name, "", msg).flatMap(metadata -> {
+				String responseMessage = String.format(
+						"토픽 '%s'로 보낼 360view 메시지를 G.C Application으로부터 받았습니다. 메시지 : %s",topic_name, msg);
+				return Mono.just(ResponseEntity.ok().body(responseMessage));
+			}).doOnError(e -> {
+				log.error("카프카 서버로 메시지를 보내는 도중 에러가 발생하였습니다. : {}", e.getMessage());
+            }).onErrorResume(e -> {
+           	 String errorMessage = String.format("카프카 서버와 통신 중 에러가 발생하였습니다. : %s", e.getMessage());
+             return Mono.just(ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(errorMessage));
+			});
 		} catch (Exception e) {
-			log.info("Error, Producer side : {}", e.getMessage()  );
-			e.printStackTrace();
+			log.error("프로듀서쪽의 에러 : {}", e.getMessage());
+			return Mono.just(ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+					.body("비동기 진행과정 중에서 에러가 발생했습니다."));
 		}
-
-		return Mono.just(ResponseEntity.ok("Get360viewData Method has been called by G.C Application well"));
+		
 	}
 
 	@GetMapping("/gethc")
 	public Mono<ResponseEntity<String>> gealthCheck() throws Exception {
 		return Mono.just(ResponseEntity.ok("TEST RESPONSE"));
 	}
-	
-	
+
 	@GetMapping("/apim-gw")
 	public Mono<ResponseEntity<String>> getHealthCheckAPIM() throws Exception {
 		return Mono.just(ResponseEntity.ok("TEST RESPONSE"));
 	}
-	
+
 	@GetMapping("/kafka-gw")
 	public Mono<ResponseEntity<String>> getHealthCheckKafka() throws Exception {
 		return Mono.just(ResponseEntity.ok("TEST RESPONSE"));
 	}
-	
+
 	/**
 	 * [EKS] POD LivenessProbe 헬스체크
 	 */
 	private final Instant started = Instant.now();
-	
-    @GetMapping("/healthz")
-    public ResponseEntity<String> healthCheck() {
-        Duration duration = Duration.between(started, Instant.now());
-        if (duration.getSeconds() > 10) {
-            return ResponseEntity.status(500).body("error: " + duration.getSeconds());
-        } else {
-            return ResponseEntity.ok("ok");
-        }
-    }
+
+	@GetMapping("/healthz")
+	public ResponseEntity<String> healthCheck() {
+		Duration duration = Duration.between(started, Instant.now());
+		if (duration.getSeconds() > 10) {
+			return ResponseEntity.status(500).body("error: " + duration.getSeconds());
+		} else {
+			return ResponseEntity.ok("ok");
+		}
+	}
 
 }
