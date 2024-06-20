@@ -1,0 +1,190 @@
+INFO  24-06-19 09:02:16[main] [AnnotationConfigContextLoaderUtils:83] - Could not detect default configuration classes for test class [producer.MainrunningappTests]: MainrunningappTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+INFO  24-06-19 09:02:17[main] [SpringBootTestContextBootstrapper:234] - Found @SpringBootConfiguration producer.Mainrunningapp for test class producer.MainrunningappTests
+WARN  24-06-19 09:02:18[main] [DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer:78] - 
+
+Found multiple occurrences of org.json.JSONObject on the class path:
+
+	jar:file:/C:/Users/%ec%9d%b8%ed%8f%ac%ec%a0%84%ec%8a%a4/.m2/repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar!/org/json/JSONObject.class
+	jar:file:/C:/Users/%ec%9d%b8%ed%8f%ac%ec%a0%84%ec%8a%a4/.m2/repository/org/json/json/20231013/json-20231013.jar!/org/json/JSONObject.class
+
+You may wish to exclude one of them to ensure predictable runtime behavior
+
+INFO  24-06-19 09:02:18[main] [MainrunningappTests:50] - Starting MainrunningappTests using Java 21.0.1 with PID 8160 (started by 인포전스 in D:\LG_Project\kafkaProducer)
+INFO  24-06-19 09:02:18[main] [MainrunningappTests:660] - The following 1 profile is active: "producer"
+INFO  24-06-19 09:02:20[main] [KafkaProducerApp:60] - IP 주소 : 172.23.15.103:9092
+INFO  24-06-19 09:02:20[main] [KafkaProducerApp:61] - authentication 인증정보 : org.apache.kafka.common.security.scram.ScramLoginModule required username="clcc_cc_svc" password="GPesEI6k78DEku58";
+INFO  24-06-19 09:02:20[main] [KafkaProducerApp:62] - 프로토콜 : SASL_PLAINTEXT
+INFO  24-06-19 09:02:20[main] [KafkaProducerApp:63] - 메커니즘 : SCRAM-SHA-256
+INFO  24-06-19 09:02:20[main] [KafkaProducerApp:81] - 프롭 : {security.protocol=SASL_PLAINTEXT, value.serializer=org.apache.kafka.common.serialization.StringSerializer, sasl.mechanism=SCRAM-SHA-256, sasl.jaas.config=org.apache.kafka.common.security.scram.ScramLoginModule required username="clcc_cc_svc" password="GPesEI6k78DEku58";, bootstrap.servers=172.23.15.103:9092, key.serializer=org.apache.kafka.common.serialization.StringSerializer}
+INFO  24-06-19 09:02:22[main] [MainrunningappTests:56] - Started MainrunningappTests in 5.072 seconds (process running for 9.264)
+INFO  24-06-19 11:38:18[main] [AnnotationConfigContextLoaderUtils:83] - Could not detect default configuration classes for test class [producer.MainrunningappTests]: MainrunningappTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+INFO  24-06-19 11:38:18[main] [SpringBootTestContextBootstrapper:234] - Found @SpringBootConfiguration producer.Mainrunningapp for test class producer.MainrunningappTests
+WARN  24-06-19 11:38:19[main] [DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer:78] - 
+
+Found multiple occurrences of org.json.JSONObject on the class path:
+
+	jar:file:/C:/Users/%ec%9d%b8%ed%8f%ac%ec%a0%84%ec%8a%a4/.m2/repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar!/org/json/JSONObject.class
+	jar:file:/C:/Users/%ec%9d%b8%ed%8f%ac%ec%a0%84%ec%8a%a4/.m2/repository/org/json/json/20231013/json-20231013.jar!/org/json/JSONObject.class
+
+You may wish to exclude one of them to ensure predictable runtime behavior
+
+INFO  24-06-19 11:38:19[main] [MainrunningappTests:50] - Starting MainrunningappTests using Java 21.0.1 with PID 8308 (started by 인포전스 in D:\LG_Project\kafkaProducer)
+INFO  24-06-19 11:38:19[main] [MainrunningappTests:660] - The following 1 profile is active: "producer"
+INFO  24-06-19 11:38:21[main] [KafkaProducerApp:57] - IP 주소 : 172.23.15.103:9092
+INFO  24-06-19 11:38:21[main] [KafkaProducerApp:58] - authentication 인증정보 : org.apache.kafka.common.security.scram.ScramLoginModule required username="clcc_cc_svc" password="GPesEI6k78DEku58";
+INFO  24-06-19 11:38:21[main] [KafkaProducerApp:59] - 프로토콜 : SASL_PLAINTEXT
+INFO  24-06-19 11:38:21[main] [KafkaProducerApp:60] - 메커니즘 : SCRAM-SHA-256
+INFO  24-06-19 11:38:21[main] [KafkaProducerApp:69] - 프롭 : {security.protocol=SASL_PLAINTEXT, value.serializer=org.apache.kafka.common.serialization.StringSerializer, sasl.mechanism=SCRAM-SHA-256, sasl.jaas.config=org.apache.kafka.common.security.scram.ScramLoginModule required username="clcc_cc_svc" password="GPesEI6k78DEku58";, bootstrap.servers=172.23.15.103:9092, key.serializer=org.apache.kafka.common.serialization.StringSerializer}
+INFO  24-06-19 11:38:23[main] [MainrunningappTests:56] - Started MainrunningappTests in 4.85 seconds (process running for 8.707)
+INFO  24-06-19 13:06:24[main] [AnnotationConfigContextLoaderUtils:83] - Could not detect default configuration classes for test class [producer.MainrunningappTests]: MainrunningappTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+INFO  24-06-19 13:06:24[main] [SpringBootTestContextBootstrapper:234] - Found @SpringBootConfiguration producer.Mainrunningapp for test class producer.MainrunningappTests
+WARN  24-06-19 13:06:24[main] [DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer:78] - 
+
+Found multiple occurrences of org.json.JSONObject on the class path:
+
+	jar:file:/C:/Users/%ec%9d%b8%ed%8f%ac%ec%a0%84%ec%8a%a4/.m2/repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar!/org/json/JSONObject.class
+	jar:file:/C:/Users/%ec%9d%b8%ed%8f%ac%ec%a0%84%ec%8a%a4/.m2/repository/org/json/json/20231013/json-20231013.jar!/org/json/JSONObject.class
+
+You may wish to exclude one of them to ensure predictable runtime behavior
+
+INFO  24-06-19 13:06:25[main] [MainrunningappTests:50] - Starting MainrunningappTests using Java 21.0.1 with PID 17688 (started by 인포전스 in D:\LG_Project\kafkaProducer)
+INFO  24-06-19 13:06:25[main] [MainrunningappTests:660] - The following 1 profile is active: "producer"
+INFO  24-06-19 13:06:26[main] [KafkaProducerApp:57] - IP 주소 : 172.23.15.103:9092
+INFO  24-06-19 13:06:26[main] [KafkaProducerApp:58] - authentication 인증정보 : org.apache.kafka.common.security.scram.ScramLoginModule required username="clcc_cc_svc" password="GPesEI6k78DEku58";
+INFO  24-06-19 13:06:26[main] [KafkaProducerApp:59] - 프로토콜 : SASL_PLAINTEXT
+INFO  24-06-19 13:06:26[main] [KafkaProducerApp:60] - 메커니즘 : SCRAM-SHA-256
+INFO  24-06-19 13:06:26[main] [KafkaProducerApp:69] - 프롭 : {security.protocol=SASL_PLAINTEXT, value.serializer=org.apache.kafka.common.serialization.StringSerializer, sasl.mechanism=SCRAM-SHA-256, sasl.jaas.config=org.apache.kafka.common.security.scram.ScramLoginModule required username="clcc_cc_svc" password="GPesEI6k78DEku58";, bootstrap.servers=172.23.15.103:9092, key.serializer=org.apache.kafka.common.serialization.StringSerializer}
+INFO  24-06-19 13:06:28[main] [MainrunningappTests:56] - Started MainrunningappTests in 4.392 seconds (process running for 7.745)
+INFO  24-06-19 13:29:08[main] [AnnotationConfigContextLoaderUtils:83] - Could not detect default configuration classes for test class [producer.MainrunningappTests]: MainrunningappTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+INFO  24-06-19 13:29:08[main] [SpringBootTestContextBootstrapper:234] - Found @SpringBootConfiguration producer.Mainrunningapp for test class producer.MainrunningappTests
+WARN  24-06-19 13:29:10[main] [DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer:78] - 
+
+Found multiple occurrences of org.json.JSONObject on the class path:
+
+	jar:file:/C:/Users/%ec%9d%b8%ed%8f%ac%ec%a0%84%ec%8a%a4/.m2/repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar!/org/json/JSONObject.class
+	jar:file:/C:/Users/%ec%9d%b8%ed%8f%ac%ec%a0%84%ec%8a%a4/.m2/repository/org/json/json/20231013/json-20231013.jar!/org/json/JSONObject.class
+
+You may wish to exclude one of them to ensure predictable runtime behavior
+
+INFO  24-06-19 13:29:10[main] [MainrunningappTests:50] - Starting MainrunningappTests using Java 21.0.1 with PID 3856 (started by 인포전스 in D:\LG_Project\kafkaProducer)
+INFO  24-06-19 13:29:10[main] [MainrunningappTests:660] - The following 1 profile is active: "producer"
+INFO  24-06-19 13:29:12[main] [KafkaProducerApp:57] - IP 주소 : 172.23.15.103:9092
+INFO  24-06-19 13:29:12[main] [KafkaProducerApp:58] - authentication 인증정보 : org.apache.kafka.common.security.scram.ScramLoginModule required username="clcc_cc_svc" password="GPesEI6k78DEku58";
+INFO  24-06-19 13:29:12[main] [KafkaProducerApp:59] - 프로토콜 : SASL_PLAINTEXT
+INFO  24-06-19 13:29:12[main] [KafkaProducerApp:60] - 메커니즘 : SCRAM-SHA-256
+INFO  24-06-19 13:29:12[main] [KafkaProducerApp:69] - 프롭 : {security.protocol=SASL_PLAINTEXT, value.serializer=org.apache.kafka.common.serialization.StringSerializer, sasl.mechanism=SCRAM-SHA-256, sasl.jaas.config=org.apache.kafka.common.security.scram.ScramLoginModule required username="clcc_cc_svc" password="GPesEI6k78DEku58";, bootstrap.servers=172.23.15.103:9092, key.serializer=org.apache.kafka.common.serialization.StringSerializer}
+INFO  24-06-19 13:29:14[main] [MainrunningappTests:56] - Started MainrunningappTests in 4.814 seconds (process running for 11.243)
+INFO  24-06-19 14:06:59[main] [AnnotationConfigContextLoaderUtils:83] - Could not detect default configuration classes for test class [producer.MainrunningappTests]: MainrunningappTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+INFO  24-06-19 14:06:59[main] [SpringBootTestContextBootstrapper:234] - Found @SpringBootConfiguration producer.Mainrunningapp for test class producer.MainrunningappTests
+WARN  24-06-19 14:07:00[main] [DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer:78] - 
+
+Found multiple occurrences of org.json.JSONObject on the class path:
+
+	jar:file:/C:/Users/%ec%9d%b8%ed%8f%ac%ec%a0%84%ec%8a%a4/.m2/repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar!/org/json/JSONObject.class
+	jar:file:/C:/Users/%ec%9d%b8%ed%8f%ac%ec%a0%84%ec%8a%a4/.m2/repository/org/json/json/20231013/json-20231013.jar!/org/json/JSONObject.class
+
+You may wish to exclude one of them to ensure predictable runtime behavior
+
+INFO  24-06-19 14:07:00[main] [MainrunningappTests:50] - Starting MainrunningappTests using Java 21.0.1 with PID 1100 (started by 인포전스 in D:\LG_Project\kafkaProducer)
+INFO  24-06-19 14:07:00[main] [MainrunningappTests:660] - The following 1 profile is active: "producer"
+INFO  24-06-19 14:07:02[main] [KafkaProducerApp:57] - IP 주소 : 172.23.15.103:9092
+INFO  24-06-19 14:07:02[main] [KafkaProducerApp:58] - authentication 인증정보 : org.apache.kafka.common.security.scram.ScramLoginModule required username="clcc_cc_svc" password="GPesEI6k78DEku58";
+INFO  24-06-19 14:07:02[main] [KafkaProducerApp:59] - 프로토콜 : SASL_PLAINTEXT
+INFO  24-06-19 14:07:02[main] [KafkaProducerApp:60] - 메커니즘 : SCRAM-SHA-256
+INFO  24-06-19 14:07:02[main] [KafkaProducerApp:69] - 프롭 : {security.protocol=SASL_PLAINTEXT, value.serializer=org.apache.kafka.common.serialization.StringSerializer, sasl.mechanism=SCRAM-SHA-256, sasl.jaas.config=org.apache.kafka.common.security.scram.ScramLoginModule required username="clcc_cc_svc" password="GPesEI6k78DEku58";, bootstrap.servers=172.23.15.103:9092, key.serializer=org.apache.kafka.common.serialization.StringSerializer}
+INFO  24-06-19 14:07:03[main] [MainrunningappTests:56] - Started MainrunningappTests in 4.0 seconds (process running for 7.419)
+INFO  24-06-19 15:20:59[main] [AnnotationConfigContextLoaderUtils:83] - Could not detect default configuration classes for test class [producer.MainrunningappTests]: MainrunningappTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+INFO  24-06-19 15:20:59[main] [SpringBootTestContextBootstrapper:234] - Found @SpringBootConfiguration producer.Mainrunningapp for test class producer.MainrunningappTests
+WARN  24-06-19 15:21:01[main] [DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer:78] - 
+
+Found multiple occurrences of org.json.JSONObject on the class path:
+
+	jar:file:/C:/Users/%ec%9d%b8%ed%8f%ac%ec%a0%84%ec%8a%a4/.m2/repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar!/org/json/JSONObject.class
+	jar:file:/C:/Users/%ec%9d%b8%ed%8f%ac%ec%a0%84%ec%8a%a4/.m2/repository/org/json/json/20231013/json-20231013.jar!/org/json/JSONObject.class
+
+You may wish to exclude one of them to ensure predictable runtime behavior
+
+INFO  24-06-19 15:21:01[main] [MainrunningappTests:50] - Starting MainrunningappTests using Java 21.0.1 with PID 25396 (started by 인포전스 in D:\LG_Project\kafkaProducer)
+INFO  24-06-19 15:21:01[main] [MainrunningappTests:660] - The following 1 profile is active: "producer"
+INFO  24-06-19 15:21:04[main] [KafkaProducerApp:57] - IP 주소 : 172.23.15.103:9092
+INFO  24-06-19 15:21:04[main] [KafkaProducerApp:58] - authentication 인증정보 : org.apache.kafka.common.security.scram.ScramLoginModule required username="clcc_cc_svc" password="GPesEI6k78DEku58";
+INFO  24-06-19 15:21:04[main] [KafkaProducerApp:59] - 프로토콜 : SASL_PLAINTEXT
+INFO  24-06-19 15:21:04[main] [KafkaProducerApp:60] - 메커니즘 : SCRAM-SHA-256
+INFO  24-06-19 15:21:04[main] [KafkaProducerApp:69] - 프롭 : {security.protocol=SASL_PLAINTEXT, value.serializer=org.apache.kafka.common.serialization.StringSerializer, sasl.mechanism=SCRAM-SHA-256, sasl.jaas.config=org.apache.kafka.common.security.scram.ScramLoginModule required username="clcc_cc_svc" password="GPesEI6k78DEku58";, bootstrap.servers=172.23.15.103:9092, key.serializer=org.apache.kafka.common.serialization.StringSerializer}
+INFO  24-06-19 15:21:07[main] [MainrunningappTests:56] - Started MainrunningappTests in 7.226 seconds (process running for 11.661)
+INFO  24-06-19 15:39:27[main] [AnnotationConfigContextLoaderUtils:83] - Could not detect default configuration classes for test class [producer.MainrunningappTests]: MainrunningappTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+INFO  24-06-19 15:39:28[main] [SpringBootTestContextBootstrapper:234] - Found @SpringBootConfiguration producer.Mainrunningapp for test class producer.MainrunningappTests
+WARN  24-06-19 15:39:29[main] [DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer:78] - 
+
+Found multiple occurrences of org.json.JSONObject on the class path:
+
+	jar:file:/C:/Users/%ec%9d%b8%ed%8f%ac%ec%a0%84%ec%8a%a4/.m2/repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar!/org/json/JSONObject.class
+	jar:file:/C:/Users/%ec%9d%b8%ed%8f%ac%ec%a0%84%ec%8a%a4/.m2/repository/org/json/json/20231013/json-20231013.jar!/org/json/JSONObject.class
+
+You may wish to exclude one of them to ensure predictable runtime behavior
+
+INFO  24-06-19 15:39:29[main] [MainrunningappTests:50] - Starting MainrunningappTests using Java 21.0.1 with PID 17908 (started by 인포전스 in D:\LG_Project\kafkaProducer)
+INFO  24-06-19 15:39:29[main] [MainrunningappTests:660] - The following 1 profile is active: "producer"
+INFO  24-06-19 15:39:31[main] [KafkaProducerApp:57] - IP 주소 : 172.23.15.103:9092
+INFO  24-06-19 15:39:31[main] [KafkaProducerApp:58] - authentication 인증정보 : org.apache.kafka.common.security.scram.ScramLoginModule required username="clcc_cc_svc" password="GPesEI6k78DEku58";
+INFO  24-06-19 15:39:31[main] [KafkaProducerApp:59] - 프로토콜 : SASL_PLAINTEXT
+INFO  24-06-19 15:39:31[main] [KafkaProducerApp:60] - 메커니즘 : SCRAM-SHA-256
+INFO  24-06-19 15:39:31[main] [KafkaProducerApp:69] - 프롭 : {security.protocol=SASL_PLAINTEXT, value.serializer=org.apache.kafka.common.serialization.StringSerializer, sasl.mechanism=SCRAM-SHA-256, sasl.jaas.config=org.apache.kafka.common.security.scram.ScramLoginModule required username="clcc_cc_svc" password="GPesEI6k78DEku58";, bootstrap.servers=172.23.15.103:9092, key.serializer=org.apache.kafka.common.serialization.StringSerializer}
+INFO  24-06-19 15:39:33[main] [MainrunningappTests:56] - Started MainrunningappTests in 5.457 seconds (process running for 9.493)
+INFO  24-06-19 16:25:33[main] [AnnotationConfigContextLoaderUtils:83] - Could not detect default configuration classes for test class [producer.MainrunningappTests]: MainrunningappTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+INFO  24-06-19 16:25:33[main] [SpringBootTestContextBootstrapper:234] - Found @SpringBootConfiguration producer.Mainrunningapp for test class producer.MainrunningappTests
+WARN  24-06-19 16:25:35[main] [DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer:78] - 
+
+Found multiple occurrences of org.json.JSONObject on the class path:
+
+	jar:file:/C:/Users/%ec%9d%b8%ed%8f%ac%ec%a0%84%ec%8a%a4/.m2/repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar!/org/json/JSONObject.class
+	jar:file:/C:/Users/%ec%9d%b8%ed%8f%ac%ec%a0%84%ec%8a%a4/.m2/repository/org/json/json/20231013/json-20231013.jar!/org/json/JSONObject.class
+
+You may wish to exclude one of them to ensure predictable runtime behavior
+
+INFO  24-06-19 16:25:35[main] [MainrunningappTests:50] - Starting MainrunningappTests using Java 21.0.1 with PID 22216 (started by 인포전스 in D:\LG_Project\kafkaProducer)
+INFO  24-06-19 16:25:35[main] [MainrunningappTests:660] - The following 1 profile is active: "producer"
+INFO  24-06-19 16:25:38[main] [KafkaProducerApp:57] - IP 주소 : 172.23.15.103:9092
+INFO  24-06-19 16:25:38[main] [KafkaProducerApp:58] - authentication 인증정보 : org.apache.kafka.common.security.scram.ScramLoginModule required username="clcc_cc_svc" password="GPesEI6k78DEku58";
+INFO  24-06-19 16:25:38[main] [KafkaProducerApp:59] - 프로토콜 : SASL_PLAINTEXT
+INFO  24-06-19 16:25:38[main] [KafkaProducerApp:60] - 메커니즘 : SCRAM-SHA-256
+INFO  24-06-19 16:25:38[main] [KafkaProducerApp:69] - 프롭 : {security.protocol=SASL_PLAINTEXT, value.serializer=org.apache.kafka.common.serialization.StringSerializer, sasl.mechanism=SCRAM-SHA-256, sasl.jaas.config=org.apache.kafka.common.security.scram.ScramLoginModule required username="clcc_cc_svc" password="GPesEI6k78DEku58";, bootstrap.servers=172.23.15.103:9092, key.serializer=org.apache.kafka.common.serialization.StringSerializer}
+INFO  24-06-19 16:25:41[main] [MainrunningappTests:56] - Started MainrunningappTests in 6.853 seconds (process running for 11.49)
+INFO  24-06-19 16:49:32[main] [AnnotationConfigContextLoaderUtils:83] - Could not detect default configuration classes for test class [producer.MainrunningappTests]: MainrunningappTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+INFO  24-06-19 16:49:32[main] [SpringBootTestContextBootstrapper:234] - Found @SpringBootConfiguration producer.Mainrunningapp for test class producer.MainrunningappTests
+WARN  24-06-19 16:49:33[main] [DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer:78] - 
+
+Found multiple occurrences of org.json.JSONObject on the class path:
+
+	jar:file:/C:/Users/%ec%9d%b8%ed%8f%ac%ec%a0%84%ec%8a%a4/.m2/repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar!/org/json/JSONObject.class
+	jar:file:/C:/Users/%ec%9d%b8%ed%8f%ac%ec%a0%84%ec%8a%a4/.m2/repository/org/json/json/20231013/json-20231013.jar!/org/json/JSONObject.class
+
+You may wish to exclude one of them to ensure predictable runtime behavior
+
+INFO  24-06-19 16:49:33[main] [MainrunningappTests:50] - Starting MainrunningappTests using Java 21.0.1 with PID 10356 (started by 인포전스 in D:\LG_Project\kafkaProducer)
+INFO  24-06-19 16:49:33[main] [MainrunningappTests:660] - The following 1 profile is active: "producer"
+INFO  24-06-19 16:49:37[main] [KafkaProducerApp:57] - IP 주소 : 172.23.15.103:9092
+INFO  24-06-19 16:49:37[main] [KafkaProducerApp:58] - authentication 인증정보 : org.apache.kafka.common.security.scram.ScramLoginModule required username="clcc_cc_svc" password="GPesEI6k78DEku58";
+INFO  24-06-19 16:49:37[main] [KafkaProducerApp:59] - 프로토콜 : SASL_PLAINTEXT
+INFO  24-06-19 16:49:37[main] [KafkaProducerApp:60] - 메커니즘 : SCRAM-SHA-256
+INFO  24-06-19 16:49:37[main] [KafkaProducerApp:69] - 프롭 : {security.protocol=SASL_PLAINTEXT, value.serializer=org.apache.kafka.common.serialization.StringSerializer, sasl.mechanism=SCRAM-SHA-256, sasl.jaas.config=org.apache.kafka.common.security.scram.ScramLoginModule required username="clcc_cc_svc" password="GPesEI6k78DEku58";, bootstrap.servers=172.23.15.103:9092, key.serializer=org.apache.kafka.common.serialization.StringSerializer}
+INFO  24-06-19 16:49:40[main] [MainrunningappTests:56] - Started MainrunningappTests in 7.88 seconds (process running for 11.442)
+INFO  24-06-19 17:26:25[main] [AnnotationConfigContextLoaderUtils:83] - Could not detect default configuration classes for test class [producer.MainrunningappTests]: MainrunningappTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+INFO  24-06-19 17:26:25[main] [SpringBootTestContextBootstrapper:234] - Found @SpringBootConfiguration producer.Mainrunningapp for test class producer.MainrunningappTests
+WARN  24-06-19 17:26:26[main] [DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer:78] - 
+
+Found multiple occurrences of org.json.JSONObject on the class path:
+
+	jar:file:/C:/Users/%ec%9d%b8%ed%8f%ac%ec%a0%84%ec%8a%a4/.m2/repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar!/org/json/JSONObject.class
+	jar:file:/C:/Users/%ec%9d%b8%ed%8f%ac%ec%a0%84%ec%8a%a4/.m2/repository/org/json/json/20231013/json-20231013.jar!/org/json/JSONObject.class
+
+You may wish to exclude one of them to ensure predictable runtime behavior
+
+INFO  24-06-19 17:26:27[main] [MainrunningappTests:50] - Starting MainrunningappTests using Java 21.0.1 with PID 25664 (started by 인포전스 in D:\LG_Project\kafkaProducer)
+INFO  24-06-19 17:26:27[main] [MainrunningappTests:660] - The following 1 profile is active: "producer"
+INFO  24-06-19 17:26:29[main] [KafkaProducerApp:58] - IP 주소 : 172.23.15.103:9092
+INFO  24-06-19 17:26:29[main] [KafkaProducerApp:59] - authentication 인증정보 : org.apache.kafka.common.security.scram.ScramLoginModule required username="clcc_cc_svc" password="GPesEI6k78DEku58";
+INFO  24-06-19 17:26:29[main] [KafkaProducerApp:60] - 프로토콜 : SASL_PLAINTEXT
+INFO  24-06-19 17:26:29[main] [KafkaProducerApp:61] - 메커니즘 : SCRAM-SHA-256
+INFO  24-06-19 17:26:29[main] [KafkaProducerApp:70] - 프롭 : {security.protocol=SASL_PLAINTEXT, value.serializer=org.apache.kafka.common.serialization.StringSerializer, sasl.mechanism=SCRAM-SHA-256, sasl.jaas.config=org.apache.kafka.common.security.scram.ScramLoginModule required username="clcc_cc_svc" password="GPesEI6k78DEku58";, bootstrap.servers=172.23.15.103:9092, key.serializer=org.apache.kafka.common.serialization.StringSerializer}
+INFO  24-06-19 17:26:31[main] [MainrunningappTests:56] - Started MainrunningappTests in 5.179 seconds (process running for 9.201)
