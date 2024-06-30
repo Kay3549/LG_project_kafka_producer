@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>Confirmation</title>
+</head>
+<body>
+	<h2>Hello World!</h2>
+	
+	<form action="/topics" method="post">
+		<th:block th:each="index : ${#numbers.sequence(1,6)}">
+			<div th:attr="id='div'+${index}">
+				<input th:attr="name='topicNames'" type="text" placeholder="Topic Name" /> 
+				<input th:attr="name='messages'" type="text" placeholder="Message" />
+			</div>
+		</th:block>
+
+		<input type="submit" value="submit">
+	</form>
+</body>
+</html>

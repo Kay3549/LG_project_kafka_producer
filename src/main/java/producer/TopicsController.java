@@ -1,10 +1,10 @@
 package producer;
 
 import java.text.SimpleDateFormat;
-import java.time.Duration;
-import java.time.Instant;
 import java.util.Date;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -21,6 +21,8 @@ import reactor.core.publisher.Mono;
 @Controller
 @Slf4j
 public class TopicsController {
+	
+	private static final Logger errorLogger = LoggerFactory.getLogger("ErrorLogger");
 
 	@Autowired
 	private KafkaProducerApp Producer;
@@ -29,8 +31,7 @@ public class TopicsController {
 	public Mono<ResponseEntity<String>> GetApiData(@PathVariable("topic") String topic,
 			@RequestBody(required = false) String msg) {
 
-		log.info("토픽으로 보낼 메시지를 받음. 토픽명 : {}", topic);
-		log.info("토픽 / 메시지 내용 : {} // {}", topic, msg);
+		log.info("Controller : G.C로 부터 받은 토픽 / 메시지 내용 => {} / {}", topic, msg);
 
 		return Producer.sendMessage(topic, "", msg).flatMap(metadata -> {
 			String messageType = topic.startsWith("from_clcc_") ? (topic.contains("rs") ? "RT" : "MA") : "";
@@ -39,6 +40,7 @@ public class TopicsController {
 			return Mono.just(ResponseEntity.ok().body(responseMessage));
 		}).doOnError(e -> {
 			log.error("카프카 서버로 메시지를 보내는 도중 에러가 발생하였습니다. : {}", e.getMessage());
+			errorLogger.error(e.getMessage(),e);
 		}).onErrorResume(e -> {
 			String errorMessage = String.format("카프카 서버와 통신 중 에러가 발생하였습니다. : %s", e.getMessage());
 			return Mono.just(ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(errorMessage));
@@ -50,8 +52,7 @@ public class TopicsController {
 			@RequestBody(required = false) String msg) {
 
 		String topic_name = tranId;
-		log.info("토픽이름 : {}", topic_name);
-		log.info("프로듀서가 받음. 메시지 : {}", msg);
+		log.info("Controller360 : G.C로 부터 받은 토픽 / 메시지 내용 => {} / {}", topic_name, msg);
 
 		try {
 			return Producer.sendMessage(topic_name, "", msg).flatMap(metadata -> {
@@ -60,12 +61,14 @@ public class TopicsController {
 				return Mono.just(ResponseEntity.ok().body(responseMessage));
 			}).doOnError(e -> {
 				log.error("카프카 서버로 메시지를 보내는 도중 에러가 발생하였습니다. : {}", e.getMessage());
+				errorLogger.error(e.getMessage(),e);
 			}).onErrorResume(e -> {
 				String errorMessage = String.format("카프카 서버와 통신 중 에러가 발생하였습니다. : %s", e.getMessage());
 				return Mono.just(ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(errorMessage));
 			});
 		} catch (Exception e) {
 			log.error("프로듀서쪽의 에러 : {}", e.getMessage());
+			errorLogger.error(e.getMessage(),e);
 			return Mono.just(ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("비동기 진행과정 중에서 에러가 발생했습니다."));
 		}
 
@@ -86,30 +89,18 @@ public class TopicsController {
 		return Mono.just(ResponseEntity.ok("TEST RESPONSE"));
 	}
 
-	/**
-	 * [EKS] POD LivenessProbe 헬스체크
-	 */
-	private final Instant started = Instant.now();
-
-	@GetMapping("/healthz")
-	public ResponseEntity<String> healthCheck() {
-		Duration duration = Duration.between(started, Instant.now());
-		if (duration.getSeconds() > 10) {
-			return ResponseEntity.status(500).body("error: " + duration.getSeconds());
-		} else {
-			return ResponseEntity.ok("ok");
-		}
-	}
-	
 	
 	@Scheduled(cron = "0 3 0 * * *") // 매일 12:03에 실행
 	public void startlogs() {
 		
-		Date today = new Date();
-
-		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy년 MM월 dd일 HH시 mm분 ss초");
-		log.info("{}, producer 로그 시작",dateFormat.format(today).toString());
+		SimpleDateFormat form = new SimpleDateFormat("yyyy년 MM월 dd일 HH시 mm분 ss초");
+		Date now = new Date();
+		String nowtime = form.format(now);
+		
+		log.info("{}, producer 로그 시작",nowtime);
+		log.error("{}, producer_error 로그 시작",nowtime);
+		errorLogger.error("{}, producer_error 로그 시작",nowtime);
 	
 	}
-
+	
 }

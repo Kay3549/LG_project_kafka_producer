@@ -170,6 +170,11 @@
 		<appender-ref ref="CATALINA" />
 	</logger>
 	
+	<!--  error logger -->
+    <Logger name="ErrorLogger" level="error" additivity="false">
+    	<AppenderRef ref="Error" />
+    </Logger>
+	
 	<logger name="io.netty.handler.timeout" level="OFF" />
  	<logger name="org.apache.kafka" level="WARN" />
  	

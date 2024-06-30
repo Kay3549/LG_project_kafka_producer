@@ -7,12 +7,12 @@ import org.springframework.scheduling.annotation.EnableAsync;
 
 @SpringBootApplication
 @EnableAsync
-public class Mainrunningapp {
+public class MainRunningApp {
 
 	
 	public static void main(String[] args) {
 		
-		SpringApplication.run(Mainrunningapp.class, args);
+		SpringApplication.run(MainRunningApp.class, args);
 
 	}
 	
